@@ -1,4 +1,4 @@
-VERSION=v0.7.0
+VERSION=v0.7.1
 ORG_REPO=gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/
 DST_REPO=registry.cn-hangzhou.aliyuncs.com/tekton-releases/
 IMAGES=(
