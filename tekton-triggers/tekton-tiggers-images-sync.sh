@@ -1,4 +1,4 @@
-VERSION=v0.5.0
+VERSION=v0.6.0
 ORG_REPO=gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/
 DST_REPO=registry.cn-hangzhou.aliyuncs.com/tekton-releases/triggers-
 IMAGES=(
