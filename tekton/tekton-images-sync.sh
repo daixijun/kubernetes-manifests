@@ -1,7 +1,7 @@
 #!/bin/bash
 # 同步tekton镜像到阿里云
 set -ex
-VERSION=v0.13.2
+VERSION=v0.14.0
 ORG_REPO=gcr.io/tekton-releases/github.com/tektoncd/pipeline/
 DST_REPO=registry.cn-hangzhou.aliyuncs.com/tekton-releases/
 IMAGES=(
