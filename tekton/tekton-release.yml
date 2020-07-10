@@ -505,8 +505,8 @@ metadata:
   labels:
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
-    pipeline.tekton.dev/release: "v0.14.0"
-    version: "v0.14.0"
+    pipeline.tekton.dev/release: "v0.14.1"
+    version: "v0.14.1"
 spec:
   group: tekton.dev
   preserveUnknownFields: false
@@ -568,8 +568,8 @@ metadata:
   labels:
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
-    pipeline.tekton.dev/release: "v0.14.0"
-    version: "v0.14.0"
+    pipeline.tekton.dev/release: "v0.14.1"
+    version: "v0.14.1"
 spec:
   group: tekton.dev
   names:
@@ -646,8 +646,8 @@ metadata:
   labels:
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
-    pipeline.tekton.dev/release: "v0.14.0"
-    version: "v0.14.0"
+    pipeline.tekton.dev/release: "v0.14.1"
+    version: "v0.14.1"
 spec:
   group: tekton.dev
   preserveUnknownFields: false
@@ -709,8 +709,8 @@ metadata:
   labels:
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
-    pipeline.tekton.dev/release: "v0.14.0"
-    version: "v0.14.0"
+    pipeline.tekton.dev/release: "v0.14.1"
+    version: "v0.14.1"
 spec:
   group: tekton.dev
   preserveUnknownFields: false
@@ -788,8 +788,8 @@ metadata:
   labels:
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
-    pipeline.tekton.dev/release: "v0.14.0"
-    version: "v0.14.0"
+    pipeline.tekton.dev/release: "v0.14.1"
+    version: "v0.14.1"
 spec:
   group: tekton.dev
   names:
@@ -827,8 +827,8 @@ metadata:
   labels:
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
-    pipeline.tekton.dev/release: "v0.14.0"
-    version: "v0.14.0"
+    pipeline.tekton.dev/release: "v0.14.1"
+    version: "v0.14.1"
 spec:
   group: tekton.dev
   preserveUnknownFields: false
@@ -890,8 +890,8 @@ metadata:
   labels:
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
-    pipeline.tekton.dev/release: "v0.14.0"
-    version: "v0.14.0"
+    pipeline.tekton.dev/release: "v0.14.1"
+    version: "v0.14.1"
 spec:
   group: tekton.dev
   preserveUnknownFields: false
@@ -971,7 +971,7 @@ metadata:
     app.kubernetes.io/component: webhook
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
-    pipeline.tekton.dev/release: devel
+    pipeline.tekton.dev/release: "v0.14.1"
 # The data is populated at install time.
 ---
 apiVersion: admissionregistration.k8s.io/v1beta1
@@ -982,7 +982,7 @@ metadata:
     app.kubernetes.io/component: webhook
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
-    pipeline.tekton.dev/release: devel
+    pipeline.tekton.dev/release: "v0.14.1"
 webhooks:
   - admissionReviewVersions:
       - v1beta1
@@ -1002,7 +1002,7 @@ metadata:
     app.kubernetes.io/component: webhook
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
-    pipeline.tekton.dev/release: devel
+    pipeline.tekton.dev/release: "v0.14.1"
 webhooks:
   - admissionReviewVersions:
       - v1beta1
@@ -1022,7 +1022,7 @@ metadata:
     app.kubernetes.io/component: webhook
     app.kubernetes.io/instance: default
     app.kubernetes.io/part-of: tekton-pipelines
-    pipeline.tekton.dev/release: devel
+    pipeline.tekton.dev/release: "v0.14.1"
 webhooks:
   - admissionReviewVersions:
       - v1beta1
@@ -1475,12 +1475,12 @@ metadata:
     app.kubernetes.io/name: controller
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: default
-    app.kubernetes.io/version: devel
+    app.kubernetes.io/version: "v0.14.1"
     app.kubernetes.io/part-of: tekton-pipelines
     # tekton.dev/release value replaced with inputs.params.versionTag in pipeline/tekton/publish.yaml
-    pipeline.tekton.dev/release: "v0.14.0"
+    pipeline.tekton.dev/release: "v0.14.1"
     # labels below are related to istio and should not be used for resource lookup
-    version: "v0.14.0"
+    version: "v0.14.1"
 spec:
   replicas: 1
   selector:
@@ -1497,35 +1497,35 @@ spec:
         app.kubernetes.io/name: controller
         app.kubernetes.io/component: controller
         app.kubernetes.io/instance: default
-        app.kubernetes.io/version: devel
+        app.kubernetes.io/version: "v0.14.1"
         app.kubernetes.io/part-of: tekton-pipelines
         # tekton.dev/release value replaced with inputs.params.versionTag in pipeline/tekton/publish.yaml
-        pipeline.tekton.dev/release: "v0.14.0"
+        pipeline.tekton.dev/release: "v0.14.1"
         # labels below are related to istio and should not be used for resource lookup
         app: tekton-pipelines-controller
-        version: "v0.14.0"
+        version: "v0.14.1"
     spec:
       serviceAccountName: tekton-pipelines-controller
       containers:
         - name: tekton-pipelines-controller
-          image: registry.cn-hangzhou.aliyuncs.com/tekton-releases/controller:v0.14.0
+          image: registry.cn-hangzhou.aliyuncs.com/tekton-releases/controller:v0.14.1
           args: [
               # These images are built on-demand by `ko resolve` and are replaced
               # by image references by digest.
               "-kubeconfig-writer-image",
-              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/kubeconfigwriter:v0.14.0",
+              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/kubeconfigwriter:v0.14.1",
               "-creds-image",
-              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/creds-init:v0.14.0",
+              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/creds-init:v0.14.1",
               "-git-image",
-              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/git-init:v0.14.0",
+              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/git-init:v0.14.1",
               "-entrypoint-image",
-              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/entrypoint:v0.14.0",
+              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/entrypoint:v0.14.1",
               "-imagedigest-exporter-image",
-              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/imagedigestexporter:v0.14.0",
+              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/imagedigestexporter:v0.14.1",
               "-pr-image",
-              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/pullrequest-init:v0.14.0",
+              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/pullrequest-init:v0.14.1",
               "-build-gcs-fetcher-image",
-              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/gcs-fetcher:v0.14.0",
+              "registry.cn-hangzhou.aliyuncs.com/tekton-releases/gcs-fetcher:v0.14.1",
               # This image is used as a placeholder pod, the Affinity Assistant
               # TODO(#2640) We may want to create a custom, minimal binary
               # As of June 8, 2020, tag 1.19.0
@@ -1580,13 +1580,13 @@ metadata:
     app.kubernetes.io/name: controller
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: default
-    app.kubernetes.io/version: devel
+    app.kubernetes.io/version: "v0.14.1"
     app.kubernetes.io/part-of: tekton-pipelines
     # tekton.dev/release value replaced with inputs.params.versionTag in pipeline/tekton/publish.yaml
-    pipeline.tekton.dev/release: "v0.14.0"
+    pipeline.tekton.dev/release: "v0.14.1"
     # labels below are related to istio and should not be used for resource lookup
     app: tekton-pipelines-controller
-    version: "v0.14.0"
+    version: "v0.14.1"
   name: tekton-pipelines-controller
   namespace: tekton-pipelines
 spec:
@@ -1628,12 +1628,12 @@ metadata:
     app.kubernetes.io/name: webhook
     app.kubernetes.io/component: webhook
     app.kubernetes.io/instance: default
-    app.kubernetes.io/version: devel
+    app.kubernetes.io/version: "v0.14.1"
     app.kubernetes.io/part-of: tekton-pipelines
     # tekton.dev/release value replaced with inputs.params.versionTag in pipeline/tekton/publish.yaml
-    pipeline.tekton.dev/release: "v0.14.0"
+    pipeline.tekton.dev/release: "v0.14.1"
     # labels below are related to istio and should not be used for resource lookup
-    version: "v0.14.0"
+    version: "v0.14.1"
 spec:
   replicas: 1
   selector:
@@ -1650,20 +1650,20 @@ spec:
         app.kubernetes.io/name: webhook
         app.kubernetes.io/component: webhook
         app.kubernetes.io/instance: default
-        app.kubernetes.io/version: devel
+        app.kubernetes.io/version: "v0.14.1"
         app.kubernetes.io/part-of: tekton-pipelines
         # tekton.dev/release value replaced with inputs.params.versionTag in pipeline/tekton/publish.yaml
-        pipeline.tekton.dev/release: "v0.14.0"
+        pipeline.tekton.dev/release: "v0.14.1"
         # labels below are related to istio and should not be used for resource lookup
         app: tekton-pipelines-webhook
-        version: "v0.14.0"
+        version: "v0.14.1"
     spec:
       serviceAccountName: tekton-pipelines-webhook
       containers:
         - name: webhook
           # This is the Go import path for the binary that is containerized
           # and substituted here.
-          image: registry.cn-hangzhou.aliyuncs.com/tekton-releases/webhook:v0.14.0
+          image: registry.cn-hangzhou.aliyuncs.com/tekton-releases/webhook:v0.14.1
           env:
             - name: SYSTEM_NAMESPACE
               valueFrom:
@@ -1701,13 +1701,13 @@ metadata:
     app.kubernetes.io/name: webhook
     app.kubernetes.io/component: webhook
     app.kubernetes.io/instance: default
-    app.kubernetes.io/version: devel
+    app.kubernetes.io/version: "v0.14.1"
     app.kubernetes.io/part-of: tekton-pipelines
     # tekton.dev/release value replaced with inputs.params.versionTag in pipeline/tekton/publish.yaml
-    pipeline.tekton.dev/release: devel
+    pipeline.tekton.dev/release: "v0.14.1"
     # labels below are related to istio and should not be used for resource lookup
     app: tekton-pipelines-webhook
-    version: "v0.14.0"
+    version: "v0.14.1"
   name: tekton-pipelines-webhook
   namespace: tekton-pipelines
 spec:
