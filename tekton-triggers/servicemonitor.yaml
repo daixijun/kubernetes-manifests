@@ -1,0 +1,19 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app.kubernetes.io/name: tekton-triggers
+    release: prometheus-operator
+  name: tekton-triggers-controller
+  namespace: tekton-pipelines
+spec:
+  endpoints:
+    - port: http-metrics
+  jobLabel: tekton-pipelines
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: controller
+      app.kubernetes.io/instance: default
+      app.kubernetes.io/name: controller
+      app.kubernetes.io/part-of: tekton-triggers
