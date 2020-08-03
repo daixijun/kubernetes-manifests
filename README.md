@@ -1,5 +1,7 @@
 # Kubernetes Manifests
 
+![Image Syncer](https://github.com/daixijun/kubernetes-manifests/workflows/Image%20Syncer/badge.svg)
+
 ## 镜像同步
 
 主要是将 `gcr.io`, `quay.io` 等墙外的镜像同步到阿里云镜像中
