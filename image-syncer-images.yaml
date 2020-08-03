@@ -1,0 +1,21 @@
+images:
+  # Tekton Pipeline
+  gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/webhook: registry.cn-hangzhou.aliyuncs.com/tekton-releases/webhook
+  gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/controller: registry.cn-hangzhou.aliyuncs.com/tekton-releases/controller
+  gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter: registry.cn-hangzhou.aliyuncs.com/tekton-releases/imagedigestexporter
+  gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint: registry.cn-hangzhou.aliyuncs.com/tekton-releases/entrypoint
+  gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop: registry.cn-hangzhou.aliyuncs.com/tekton-releases/nop
+  gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init: registry.cn-hangzhou.aliyuncs.com/tekton-releases/git-init
+  gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/creds-init: registry.cn-hangzhou.aliyuncs.com/tekton-releases/creds-init
+  gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/kubeconfigwriter: registry.cn-hangzhou.aliyuncs.com/tekton-releases/kubeconfigwriter
+  gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init: registry.cn-hangzhou.aliyuncs.com/tekton-releases/pullrequest-init
+  gcr.io/tekton-releases/github.com/tektoncd/pipeline/vendor/github.com/googlecloudplatform/cloud-builders/gcs-fetcher/cmd/gcs-fetcher: registry.cn-hangzhou.aliyuncs.com/tekton-releases/gcs-fetcher
+  gcr.io/distroless/base: registry.cn-hangzhou.aliyuncs.com/tekton-releases/distroless-base
+  # Tekton Dashboard
+  gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard: registry.cn-hangzhou.aliyuncs.com/tekton-releases/dashboard
+  gcr.io/tekton-releases/github.com/tektoncd/experimental/webhooks-extension/cmd/extension: registry.cn-hangzhou.aliyuncs.com/tekton-releases/webhooks-extension-extension
+  gcr.io/tekton-releases/github.com/tektoncd/experimental/webhooks-extension/cmd/interceptor: registry.cn-hangzhou.aliyuncs.com/tekton-releases/webhooks-extension-interceptor
+  # Tekton Triggers
+  gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/webhook: registry.cn-hangzhou.aliyuncs.com/tekton-releases/triggers-webhook
+  gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/controller: registry.cn-hangzhou.aliyuncs.com/tekton-releases/triggers-controller
+  gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink: registry.cn-hangzhou.aliyuncs.com/tekton-releases/triggers-eventlistenersink
