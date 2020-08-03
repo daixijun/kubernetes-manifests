@@ -1,0 +1,29 @@
+name: Image Syncer
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  image-syncer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache records
+        uses: actions/cache@v2
+        id: cache-records
+        with:
+          path: records
+          key: ${{ runner.os }}-records
+      - name: Setup image syncer auth
+        run: |
+          echo "${{ secrets.IMAGE_SYNCER_AUTH }}" | base64 --decode > auth.yaml
+      - name: Setup image syncer
+        run: |
+          curl -SL -O https://github.com/AliyunContainerService/image-syncer/releases/download/v1.2.0/image-syncer-v1.2.0-linux-amd64.tar.gz
+          tar xf image-syncer-v1.2.0-linux-amd64.tar.gz
+      - name: Sync
+        run: |
+          ./image-syncer --auth auth.yaml --images image-syncer-images.yaml --proc 10 --retries 5
