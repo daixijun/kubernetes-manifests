@@ -6,6 +6,8 @@
 
 依赖于阿里云开源的镜像同步工具 [image-syncer](https://github.com/AliyunContainerService/image-syncer)
 
+> 其中 `auth.yaml` 添加在 secrets 中
+
 ```sh
-image-syncer --config image-syncer-config.yaml
+image-syncer --auth auth.yaml --images image-syncer-images.yaml
 ```
