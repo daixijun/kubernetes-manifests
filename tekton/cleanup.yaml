@@ -1,0 +1,64 @@
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: tekton-pipeline-cleaner
+  namespace: tekton-pipelines
+rules:
+  - apiGroups:
+      - tekton.dev
+    resources:
+      - pipelineruns
+      - taskruns
+    verbs:
+      - list
+      - delete
+      - get
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tekton-pipeline-cleaner
+  namespace: tekton-pipelines
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: tekton-pipeline-cleaner-binding
+  namespace: tekton-pipelines
+subjects:
+  - kind: ServiceAccount
+    name: tekton-pipeline-cleaner
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: tekton-pipeline-cleaner
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: tekton-pipeline-cleaner
+  namespace: tekton-pipelines
+spec:
+  schedule: "*/30 * * * *"
+  concurrencyPolicy: "Forbid"
+  successfulJobsHistoryLimit: 0
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          name: tekton-pipeline-cleaner
+        spec:
+          serviceAccountName: tekton-pipeline-cleaner
+          containers:
+            - name: tekton-pipeline-cleaner
+              image: bitnami/kubectl:latest
+              command:
+                - /bin/sh
+              args:
+                - -c
+                - |-
+                  set -xe
+                  kubectl get taskruns -n tekton-pipelines | grep Succeeded | awk '{print $1}' | xargs kubectl delete taskruns --force -n tekton-pipelines --ignore-not-found || true
+                  kubectl get pipelineruns -n tekton-pipelines | grep Succeeded | awk '{print $1}' | xargs kubectl delete pipelineruns --force -n tekton-pipelines --ignore-not-found || true
+          restartPolicy: "Never"
