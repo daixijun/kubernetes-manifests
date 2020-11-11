@@ -10,6 +10,7 @@ gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/kubeconfigwriter: regist
 gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init: registry.cn-hangzhou.aliyuncs.com/tekton-releases/pullrequest-init
 gcr.io/tekton-releases/github.com/tektoncd/pipeline/vendor/github.com/googlecloudplatform/cloud-builders/gcs-fetcher/cmd/gcs-fetcher: registry.cn-hangzhou.aliyuncs.com/tekton-releases/gcs-fetcher
 gcr.io/distroless/base: registry.cn-hangzhou.aliyuncs.com/tekton-releases/distroless-base
+gcr.io/google.com/cloudsdktool/cloud-sdk: registry.cn-hangzhou.aliyuncs.com/tekton-releases/cloud-sdk
 # Tekton Dashboard
 gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard: registry.cn-hangzhou.aliyuncs.com/tekton-releases/dashboard
 gcr.io/tekton-releases/github.com/tektoncd/experimental/webhooks-extension/cmd/extension: registry.cn-hangzhou.aliyuncs.com/tekton-releases/webhooks-extension-extension
